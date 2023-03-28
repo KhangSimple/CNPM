@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="/css/signIn.css">
+
+</head>
+<body>
+    <section>
+        <!--Bắt Đầu Phần Hình Ảnh-->
+        <div class="img-bg">
+            <img src="https://i0.wp.com/vietnaminsider.vn/wp-content/uploads/2019/08/train.jpg?fit=1024%2C807&ssl=1" alt="Hình Ảnh Minh Họa">
+        </div>
+        <!--Kết Thúc Phần Hình Ảnh-->
+        <!--Bắt Đầu Phần Nội Dung-->
+        <div class="noi-dung">
+            <div class="form">
+                <h2>Trang Đăng Ký</h2>
+                <form action="/report-signUp" method="post">
+                    <div class="input-form">
+                        <span>Tên Người Dùng</span>
+                        <input type="text" name="username" pattern="(?=.*\d)(?=.*[a-z]).{5,}" title="Phải có ít nhất 1 kí tự in thường,số và có ít nhất 5 kí tự">
+                    </div>
+                    <!--
+                    <div class="alert">
+                        <% if(checkUsername == 1) { %>
+                            <span>Tài khoản không hợp lệ!</span>
+                        <% } %>
+                    </div>
+                    -->
+                    <div class="alert">
+                        <% if(checkUsername == 2) { %>
+                            <span>Tài khoản đã tồn tại!</span>
+                        <% } %>
+                    </div>
+                    <div class="input-form">
+                        <span>Mật Khẩu</span>
+                        <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z]).{6,}"
+                        title="Phải có ít nhất 1 kí tự in thường,số và có ít nhất 6 kí tự">
+                    </div>
+                    <!--
+                    <div class="alert">
+                        <% if(checkPassword == 1) { %>
+                            <span>Mật khẩu không hợp lệ!(Phải có ít nhất 6 ký tự)</span>
+                        <% } %>
+                    </div>
+                    -->
+                    <div class="input-form">
+                        <span>Nhập lại mật Khẩu</span>
+                        <input type="password" name="re_password" id="re_password">
+                    </div>
+                    <div class="alert">
+                        <% if(checkRePassword >=1) { %>
+                            <span>Mật khẩu không khớp</span>
+                        <% } %>
+                    </div>
+                    <div class="input-form">
+                        <button type="submit" value="Đăng Ký">Đăng Ký</button>
+                    </div>
+                    <div class="input-form">
+                        <p>Bạn đã Có Tài Khoản? <a href="/">Đăng nhập</a></p>
+                    </div>
+                </form>
+                <h3>Đăng Nhập Bằng Mạng Xã Hội</h3>
+                <ul class="icon-dang-nhap">
+                    <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-google" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+        </div>
+        <!--Kết Thúc Phần Nội Dung-->
+    </section>
+</body>
+</html>

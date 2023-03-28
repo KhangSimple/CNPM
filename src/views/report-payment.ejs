@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán vé tàu</title>
+    <link rel="stylesheet" href="/css/payment.css">
+</head>
+<body>
+    <h2>Thanh toán vé tàu của bạn</h2>
+    <form action="/updatePayment" method="post">
+        <input type="hidden" value="<%= ac_id%>" name="ac_id">
+        <label>Ticket_id: <%=ticket_id %></label><br>
+        <input value="<%=ticket_id %>" name="ticket_id" type="hidden"><br>
+        <input type="hidden" name="username" value="<%=username %>">
+        <input type="hidden" name="password" value="<%=password %>">
+        <label>Ngân hàng:</label><br>
+        <select style="font-size:15px;color:#7D7D7D">
+            <option value="Vietcombank">Vietcombank</option>
+            <option value="Agribank">Agribank</option>
+            <option value="Viettinbank">Viettinbank</option>
+            <option value="MB">MB</option>
+            <option value="Techcombank">Techcombank</option>
+            <option value="BIDV">BIDV</option>
+        </select><br>
+        <label>Số tài khoản:</label><br>
+        <input name="STK" type="text" required title="Số tài khoản không hợp lệ" pattern="[0,9].{12,14}"><br>
+        <label>Số tiền: 200,000</label><br>
+        <button type="submit">Thanh toán</button>
+    </form>
+</body>
+</html>

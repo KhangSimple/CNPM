@@ -1,0 +1,297 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Website-Khang</title>
+</head>
+<body>
+    <!--
+    <div><h1>HKang ne from ejs</h1>
+    <h1>My table data</h1>
+    <div>
+        <table>
+            <tr>
+                <th>Customer_id</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Action</th>
+            </tr>
+            <% for(var i=0; i < dataUser.length; i++) { %>
+                <tr>
+                <td><%= dataUser[i].customer_id %></td>
+                <td><%= dataUser[i].name %></td>
+                <td><%= dataUser[i].phoneNumber %></td>
+                    
+                <td>
+                    <button><a href="detail/user/<%= dataUser[i].customer_id %>" target="_blank">Details</a></button>
+                    <form action="/edit-user/<%= dataUser[i].customer_id %>" method="GET">
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form action="/delete-user" method="POST">
+                        <input type="text" hidden value="<%= dataUser[i].customer_id %>" name="customer_id"/>
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    <div class="create_user_container">
+        <form action="/create-new-user" method="POST">
+            <div><b>Create a new user:</b></div>
+                <div>
+                    <label>Name:</label>
+                    <input type="text" name="name">
+                </div>
+                <div>
+                    <label>Phone Number:</label>
+                    <input type="text" name="phoneNumber">
+                </div>
+                <div>
+                    <button type="submit" class="btn-submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    -->
+
+    <div class="header">
+      <a class="logo"><img src="https://duongsatbacnam.vn/wp-content/uploads/logo-nam-long-02.png" alt="logo" style="width:40px;height:40px;" \></a>
+      <div class="header-left">
+        <a class="active" id="book" onclick="scrollElement('book-title')"><i class="material-icons">bookmarks</i> ĐẶT VÉ</a>
+        <a href="https://duongsatvietnam.vn/tin-tuc-ve-tau/" onclick="scrollElement('book_form')" class="option"><i class="material-icons">train</i> NHÀ GA</a>
+        <a href="#ticket" id="searchTicketInfo" class="option" onclick="openSearch()"><i class="material-icons">today</i> TRA CỨU</a>
+        <a class="option" id="info" onclick="scrollElement('lienlac')"><i class="material-icons">mail</i> LIÊN HỆ</a>
+        <a onclick=""></a>
+      </div>
+      <div style="text-align: center;float: right;padding-top: 20px;color:blue;font-size: 22px;">
+        ID: <%=user.account_id %>
+      </div>
+    </div>
+
+      <div>
+      <img src="https://bcp.cdnchinhphu.vn/334894974524682240/2022/10/26/tau1-16667767939472028755618.jpg" alt="train" style="margin-left:25%;" \> <br/>
+      </div>
+      <div class="ticket" style="margin-left:10%;margin-right:10%;margin-top:20px">
+        <button class="tablink" onclick="openPage('HN', this, '','defaultOpen')" id="defaultOpen">TÀU TỪ HÀ NỘI</button>
+        <button id="TH_title" class="tablink" onclick="openPage('TH', this, '','TH_title')">TÀU TỪ THANH HÓA</button>
+        <button id="HUE_title" class="tablink" onclick="openPage('H', this, '','HUE_title')">TÀU TỪ HUẾ</button>
+        <button id="NB_title" class="tablink" onclick="openPage('NB', this, '','NB_title')">TÀU TỪ NINH BÌNH</button>
+        <div id="HN" class="tabcontent">
+          <table>
+            <tr style="color:black;font-weight:bold;"><th >Hà Nội</th><th >Hà Nội</th><th >Hà Nội</th></tr>
+            <tr><td>Hà Nội đi Lào Cai</td><td>Hà Nội đi Quy Nhơn</td><td>Hà Nội đi Nha Trang</td></tr>
+            <tr><td>Hà Nội đi Thanh Hóa</td><td>Hà Nội đi Nghệ An</td><td>Hà Nội đi Đà Nẵng</td></tr>
+            <tr><td>Hà Nội đi Quảng Ngãi</td><td>Hà Nội đi Huế</td><td>Hà Nội đi Nam Định</td></tr>
+            <tr><td>Hà Nội đi Tháp Chàm</td><td>Hà Nội đi Sài Gòn</td><td>Hà Nội đi Đồng Hới</td></tr>
+          </table>
+        </div>
+  
+        <div id="TH" class="tabcontent">
+          <table>
+            <tr style="color:black;font-weight:bold;"><td >Thanh Hóa</td><td >Thanh Hóa</td><td >Thanh Hóa</td></tr>
+            <tr><td>Thanh Hóa đi Nha Trang</td><td>Thanh Hóa đi Sài Gòn</td><td>Thanh Hóa đi Đà Lạt</td></tr>
+            <tr><td>Thanh Hóa đi Quảng Ngãi</td><td>Thanh Hóa đi Vinh</td><td>Thanh Hóa đi Hà Nội</td></tr>
+            <tr><td>Thanh Hóa đi Tuy Hòa</td><td>Thanh Hóa đi Tam Kỳ</td><td>Thanh Hóa đi Đồng Hới</td></tr>
+            <tr><td>Thanh Hóa đi Đà Nẵng</td><td>Thanh Hóa đi Ninh Bình</td><td>Thanh Hóa đi Nam Định</td></tr>
+    
+          </table>
+        </div>
+  
+        <div id="H" class="tabcontent">
+          <table>
+            <tr style="color:black;font-weight:bold;"><td >Huế</td><td >Huế</td><td >Huế</td></tr>
+            <tr><td>Huế đi Nha Trang</td><td>Huế đi Sài Gòn</td><td>Huế đi Đà Lạt</td></tr>
+            <tr><td>Huế đi Quảng Ngãi</td><td>Huế đi Vinh</td><td>Huế đi Hà Nội</td></tr>
+            <tr><td>Huế đi Tuy Hòa</td><td>Huế đi Đồng Hới</td><td>Huế đi Đà Nẵng</td></tr>
+            <tr><td>Huế đi Ninh Bình</td><td>Huế đi Thanh Hóa</td><td>Huế đi Diêu Trì</td></tr>
+          </table>
+        </div>
+  
+        <div id="NB" class="tabcontent">
+          <table>
+            <tr style="color:black;font-weight:bold;"><td >Ninh Bình</td><td >Ninh Bình</td><td >Ninh Bình</td></tr>
+            <tr><td>Ninh Bình đi Hà Nội</td><td>Ninh Bình đi Quy Đà Nẵng</td><td>Ninh Bình đi Tháp Chàm</td></tr>
+            <tr><td>Ninh Bình đi Nam Định</td><td>Ninh Bình đi Quảng Ngãi</td><td>Ninh Bình đi Nha Trang</td></tr>
+            <tr><td>Ninh Bình đi Tuy Hòa</td><td>Ninh Bình đi Quảng Ngãi</td><td>Ninh Bình đi Vinh</td></tr>
+            <tr><td>Ninh Bình đi Huế</td><td>Ninh Bình đi Bình Thuận</td><td>Ninh Bình đi Nam Định</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="ad" style="margin-left:5%;margin-right:5%;margin-top:30px; margin-bottom:100px">
+        <table style="border:none">
+          <tr><th><i class="material-icons heart" >favorite</i></th><th><i class="material-icons tick">check</i></th><th><i class="material-icons help">help</i></th><th><i class="material-icons safe">safety_check</i></th></tr>
+          <tr style="font-size:20px;color:red;font-weight:bold;"><td>GIÁ TỐT</td><td>THUẬN TIỆN</td><td>HỖ TRỢ 24/7</td><td>AN TOÀN</td></tr>  
+          <tr style="font-size:17px;">
+            <td>Khang Huy Travel cam kết giá tốt, bạn tự tin đặt vé, chúng tôi tự tin giá tốt</td>
+            <td>Đặt vé đơn giản và thuận tiện dù bạn ở bất cứ nơi nào bằng Mobile, Tablet,...</td>
+            <td>Dịch vụ Khách hàng 24/7 luôn bên bạn trên khắp mọi hành trình</td>
+            <td>Đảm bảo mọi giao dịch an toàn, chính xác. Bạn luôn có chỗ trên chuyến tàu</td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="hot_ticket">
+        
+      </div>
+
+      <div class="body-title">
+        <hr style="float:left">
+        THÔNG TIN GA TÀU
+        <hr style="float:right">
+      </div>
+      <div class="station_info">
+        <table>
+          <tr>
+            <th><a href="https://duongsatvietnam.vn/ga-long-bien-mot-so-thong-tin-can-biet/"><img src="./images/image/ga_long_bien.jpg"></a></th>
+            <th><a href="https://duongsatvietnam.vn/ga-ha-noi-thong-tin-tin-tuc-ve-ga-ha-noi/"><img src="./images/image/ga_ha_noi.jpg"></a></th>
+            <th><a href="https://duongsatvietnam.vn/ga-lao-cai-thong-tin-ve-lich-va-gia-ve/"><img src="./images/image/ga_lao_cai.jpg"></a></th>
+            <th><a href="https://duongsatvietnam.vn/ga-da-nang-thong-tin-ve-tau-va-lich-khoi-hanh/"><img src="./images/image/ga_da_nang.jpg"></a></th>
+          </tr>
+          <tr>
+            <td>GA LONG BIÊN</td>
+            <td>GA HÀ NỘI</td>
+            <td>GA LÀO CAI</td>
+            <td>GA ĐÀ NẴNG</td>
+          </tr>
+        </table>
+      </div>
+
+      
+      <div class="body-title" id="book-title">
+        <hr style="float: left;">
+        ĐẶT VÉ TRỰC TUYẾN
+        <hr style="float: right;">
+      </div>
+      <div class="book_ticket" id="book_form">
+        <form action="/book-ticket" method="POST">
+          <input type="hidden" name="account_id" value="<%=user.account_id %>">
+          <input type="hidden" name="username" value="<%=user.username %>">
+          <input type="hidden" name="password" value="<%=user.password %>">
+
+          <label for="name">Họ và tên</label>
+          <input type="text" id="name" name="name" placeholder="Nhập tên của quý khách" style="font-size:16px" required>
+
+          <label for="start">Điểm xuất phát</label>
+          <select id="start" name="start" style="font-size:15px;color:#7D7D7D">
+            <option value="Hà nội">Hà Nội</option>
+            <option value="Thành Phố Hồ Chí Minh">Thành phố Hồ Chí Minh</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Nha Trang">Nha Trang</option>
+            <option value="Vinh">Vinh</option>
+            <option value="Thanh Hóa">Thanh Hóa</option>
+            <option value="Ninh Bình">Ninh Bình</option>
+          </select>
+          
+          <label for="destination">Điểm đến</label>
+          <select id="destination" name="destination" style="font-size:15px;color:#7D7D7D">
+            <option value="Thành phố Hồ Chí Minh">Thành phố Hồ Chí Minh</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Nha Trang">Nha Trang</option>
+            <option value="Vinh">Vinh</option>
+            <option value="Thanh Hóa">Thanh Hóa</option>
+            <option value="Ninh Bình">Ninh Bình</option>
+          </select>
+          <div style="margin-bottom:10px;">
+            <label for="startDate">Ngày khởi hành</label>
+            <input type="date" id="startDate" name="startDate" style="font-size:14px;width:100%;color:#7D7D7D;padding:10px;border-style:round;" required>
+          </div>
+          <div style="margin-bottom:10px;">
+            <label for="khuahoi">Khứa Hồi</label>
+            <input type="date" id="khuahoi" name="khuahoi" style="font-size:14px;width:100%;color:#7D7D7D;padding:10px;border-style:round;">
+          </div>
+          
+          <label for="phone">Số điện thoại</label>
+          <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của quý khách" style="font-size:16px" pattern="[0][0-9]{9,}" title="Số điện thoại không hợp lệ!"  required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email nếu có" style="font-size:16px" required>
+          <label for="address">Địa chỉ hiện tại</label>
+          <input type="text" id="address" name="address" placeholder="Nhập địa chỉ quý khách" style="font-size:16px" required>
+          <label for="message">Nội dung yêu cầu</label>
+          <input type="text" id="message" name="message" placeholder="Nội dung yêu cầu" style="font-size:16px">
+
+          <button type="submit" style="font-size:20px;font-weight:bold">ĐẶT VÉ</button>
+        </form>
+      </div>
+      
+      <div class="footer" style="background:blue" id="lienlac">
+        <table>
+          <tr style="color:white;font-weight:bold;font-size:17px"><th style="margin-right:100px">CÁCH THỨC ĐẶT VÉ</th><th>KẾT NỐI VỚI CHÚNG TÔI</th><th>MUA VÉ TÀU TRỰC TUYẾN</th></tr>
+          <tr>
+            <td style="width:30%">
+              <i class="material-icons">computer</i>
+              <div style="color:white;font-size:16px;font-weight:bold">TRỰC TIẾP QUA WEBSITE :  <a href="https://lily-thoughtful-slug.glitch.me/" style="color:yellow">Website Khangy</a></div>
+              <i class="material-icons">call</i>
+              <div style="color:white;font-size:16px;font-weight:bold">ĐẶT VÉ QUA SỐ HOTLINE :  <span style="color:yellow">0123456789</span></div>
+              <i class="material-icons">meeting_room</i>
+              <div style="color:white;font-size:16px;font-weight:bold">ĐẶT VÉ TẠI VĂN PHÒNG : </div>
+              <div style="color:white">Trụ sở chính: Phòng 1, Gò Đậu, Phú Nghĩa, Chương Mỹ,Hà Nội(đối diện Chùa Hạ)</div>
+            </td>
+            <td style="text-align:center;width:40%" >
+              <img src="https://levvvel.com/wp-content/uploads/best-small-minecraft-houses.jpg" alt="mine" style="width:35%; height:auto;border:5px solid green;border-radius: 8px;">
+            </td>
+            <td>
+              <p style="color:white;font-weight:bold">
+                Đặt Vé Tàu | Mua Vé Tàu | Mua Vé Tàu Online |<br/>Đặt Vé Tàu Online | Vé Tàu Hà Nội Vinh | <br/>Vé Tàu Hà Nội Quảng Bình | Vé Tàu Hà Nội Huế |<br/>Vé Tàu Hà Nội Đà Nẵng |<br/>Vé Tàu Sài Gòn Nha Trang
+                <br/><span style="color:red;font-size:20px">Đơn vị trực thuộc: Công ty VHKM</span>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      <!-- Tạo các sub div-->
+      <div id="searchTicket" class="search">
+        <span class="closebtn" onclick="closeSearch()" title="Close">×</span>
+        <div class="search-content">
+          <form action="/getCustomerDetail" method="post">
+            <input type="text" placeholder="Type your ID.." name="search">
+            <input type="hidden" name="username" value="<%=user.username %>">
+            <input type="hidden" name="password" value="<%=user.password %>">
+            <button type="submit" style="background: rgb(34,193,195);background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,158,253,0.7344187675070029) 100%);"><i class="material-icons">search</i></button>
+          </form>
+        </div>
+      </div>
+
+
+      <script>
+      function openPage(pageName,elmnt,color,tablink) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor ="";
+          tablinks[i].style.border = "none"
+        }
+        document.getElementById(pageName).style.display = "block";
+        document.getElementById(tablink).style.border = "1px solid #DADADA";
+        document.getElementById(tablink).style.borderBottom = "none";
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.backgroundColor = color;
+      } 
+        // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+
+
+      function openSearch() {
+        document.getElementById("searchTicket").style.display = "block";
+      }  
+      function closeSearch() {
+        document.getElementById("searchTicket").style.display = "none";
+      }
+      function scrollElement(cs){
+        var element = document.getElementById(cs)
+        element.scrollIntoView();
+      }
+    </script>
+</body>
+</html>
