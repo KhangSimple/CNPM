@@ -9,10 +9,17 @@
 <body>
     <div>
         <p style="font-size:25px;">Book ticket successfully</p>
+        <form action="/getPaymentPage" method="post">
+            <input type="hidden" value="<%=ac_id%>" name="ac_id">
+            <input type="hidden" value="<%=tk_id%>" name="ticket_id">
+            <input type="hidden" value="<%=username%>" name="username">
+            <input type="hidden" value="<%=password%>" name="password">
+            <button type="submit" id="payment">Thanh toán ngay</button>
+        </form>
         <form action="/open-MainPage" method="post">
             <input type="hidden" value="<%=username%>" name="username">
             <input type="hidden" value="<%=password%>" name="password">
-            <button type="submit">Quay lại</button>
+            <button type="submit" id="later">Để sau</button>
         </form>
     </div>
 </body>

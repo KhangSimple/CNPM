@@ -99,7 +99,9 @@ let bookTicket = async (req,res) => {
 
     await pool.execute("insert into ticket(customer_id,station_start,destination,cost,start_date,return_date,type,message) values(?,?,?,?,?,?,?,?)"
     ,[customer_id,start,destination,200.0,startDate,khuahoi,type,message]);
-    res.render("report.ejs", {username:username,password:password});
+    let ticket_id = await pool.execute("select max(ticket_id) as m from ticket");
+    let tk_id = ticket_id[0][0].m;
+    res.render("report.ejs", {tk_id:tk_id,ac_id:account_id,username:username,password:password});
 }
 
 let getCsDetail =async (req,res) => {
