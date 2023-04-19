@@ -99,10 +99,34 @@
       <div class="station_info">
         <table>
           <tr>
-            <th><a href="https://duongsatvietnam.vn/ga-long-bien-mot-so-thong-tin-can-biet/"><img src="./images/image/ga_long_bien.jpg"></a></th>
-            <th><a href="https://duongsatvietnam.vn/ga-ha-noi-thong-tin-tin-tuc-ve-ga-ha-noi/"><img src="./images/image/ga_ha_noi.jpg"></a></th>
-            <th><a href="https://duongsatvietnam.vn/ga-lao-cai-thong-tin-ve-lich-va-gia-ve/"><img src="./images/image/ga_lao_cai.jpg"></a></th>
-            <th><a href="https://duongsatvietnam.vn/ga-da-nang-thong-tin-ve-tau-va-lich-khoi-hanh/"><img src="./images/image/ga_da_nang.jpg"></a></th>
+            <th>
+              <form action="/getStationInfo/0" method="POST">
+                <input type="hidden" name="username" value="<%=user.username %>">
+                <input type="hidden" name="password" value="<%=user.password %>">
+                <button type="submit"><img src="./images/image/ga_long_bien.jpg"></button>
+              </form>
+            </th>
+            <th>
+              <form action="/getStationInfo/1" method="POST">
+                <input type="hidden" name="username" value="<%=user.username %>">
+                <input type="hidden" name="password" value="<%=user.password %>">
+                <button type="submit"><img src="./images/image/ga_ha_noi.jpg"></button>
+              </form>
+            </th>
+            <th>
+              <form action="/getStationInfo/2" method="POST">
+                <input type="hidden" name="username" value="<%=user.username %>">
+                <input type="hidden" name="password" value="<%=user.password %>">
+                <button type="submit"><img src="./images/image/ga_lao_cai.jpg"></button>
+              </form>
+            </th>
+            <th>
+              <form action="/getStationInfo/3" method="POST">
+                <input type="hidden" name="username" value="<%=user.username %>">
+                <input type="hidden" name="password" value="<%=user.password %>">
+                <button type="submit"><img src="./images/image/ga_da_nang.jpg"></button>
+              </form>
+            </th>
           </tr>
           <tr>
             <td>GA LONG BIÊN</td>

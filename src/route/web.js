@@ -9,6 +9,7 @@ const initWebRoute = (app) => {
     router.post('/report-signUp', homeController.reportSignUp);
     router.post('/book-ticket', homeController.bookTicket);
     router.post('/getCustomerDetail', homeController.getCsDetail);
+    router.post('/getStationInfo/:id', homeController.getStationInfo);
     /*
     router.get('/detail/user/:id', homeController.getDetailPage);
     router.post('/create-new-user', homeController.createNewUser);

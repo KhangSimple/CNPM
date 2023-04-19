@@ -4,11 +4,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book ticket successfully</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/css/report.css">
 </head>
 <body>
     <div>
-        <p style="font-size:25px;">Book ticket successfully</p>
+        <p class="title">Đặt vé thành công</p>
         <form action="/getPaymentPage" method="post">
             <input type="hidden" value="<%=ac_id%>" name="ac_id">
             <input type="hidden" value="<%=tk_id%>" name="ticket_id">
@@ -21,6 +22,7 @@
             <input type="hidden" value="<%=password%>" name="password">
             <button type="submit" id="later">Để sau</button>
         </form>
+        <p class="alert" style="font-size: 18px;color: rgb(227, 11, 0)"><i class="material-icons" style="color: red;">priority_high</i>Hạn thanh toán là 22h:30 hôm nay,vé tàu này sẽ bị hủy nếu bạn không thanh toán đúng hạn</p>
     </div>
 </body>
 </html>

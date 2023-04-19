@@ -327,4 +327,7 @@ button[type=submit]:hover {
   background: #bbb;
 }
 
+.station_info button[type=submit]{
+  background: none;
+}
   

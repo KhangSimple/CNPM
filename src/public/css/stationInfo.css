@@ -1,0 +1,13 @@
+button[type=submit]{
+    background-color: red;
+    width: 100%;
+    font-size: 25px;
+    color: white;
+    border:3px solid red;
+    cursor: pointer;
+}
+button[type=submit]:hover{
+    background-color: white;
+    color: red;
+    border:2px solid red;
+}
