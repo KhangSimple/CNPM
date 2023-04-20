@@ -5,13 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GA ĐÀ NẴNG - THÔNG TIN CẦN BIẾT</title>
     <link rel="stylesheet" href="/css/stationInfo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <form action="/open-mainPage" method="POST">
+    <form action="/open-mainPage" method="POST" >
         <input type="hidden" name="username" value="<%=username %>">
         <input type="hidden" name="password" value="<%=password %>">
         <button type="submit">Quay lại</button>
     </form>
-    <p>Ga Đà Nẵng</p>
+    <div class="body">
+        <p style="color: red;font-family:Cormorant,serif;font-weight:500;font-size: 25px;">GA ĐÀ NẴNG - THÔNG TIN CẦN BIẾT</p>
+        <img src="https://vetau.alltours.vn/wp-content/uploads/2018/11/ga-da-nang.jpg">
+        <p>Ga Đà Nẵng</p>
+        <p class="title">
+            Giới thiệu chung về ga Đà Nẵng
+        </p>
+        <p class="intro">
+            Ga Đà Nẵng là một trong những nhà Ga chính của hệ thống đường sắt Việt Nam, có địa chỉ tại số 791 Hải Phòng, Tam Thuận, Thanh Khê, Đà Nẵng. Đây là nhà ga lớn phục vụ cho hành khách đi tàu ở các huyện tại Quảng Bình và khu vực lân cận khi có nhu cầu đi lại khắp các tỉnh thành khác có ga tàu trên cả nước.
+        <br>
+            Từ Ga Đà Nẵng hành khách có thể lựa chọn các chuyến tàu:
+            <ul>
+                <li>Đón các tàu có số hiệu SE2, SE4, SE6, SE8, SE10 và TN2 để đi các ga: Huế, Đà Nẵng, Đồng Hới, Đồng Lê, Hương Phố, Yên Trung, Vinh, Chợ Sy, Minh Khôi, Thanh Hoá, Bỉm Sơn, Ninh Bình, Nam Định, Phủ Lý và Hà Nội.</li>
+                <li>Đón các chuyến tàu có số hiệu SE3, SE5, SE7, SE9 và TN1 để đi vào các ga phía Nam như: Tam Kỳ (Quảng Nam), Núi Thành (Quảng Nam), Quảng Ngãi, Đức Phổ (Quảng Ngãi), Bồng Sơn (Bình Định), Diêu Trì (Bình Định), Tuy Hòa (Phú Yên), Giã (Khánh Hòa), Ninh Hòa (Khánh Hòa), Nha Trang (Khánh Hòa), Ngã Ba (Khánh Hòa), Tháp Chàm (Ninh Thuận), Sông Mao (Bình Thuận), Ma Lâm (Bình Thuận), Bình Thuận, Long Khánh (Đồng Nai), Biên Hòa (Đồng Nai), Sài Gòn.</li>
+            </ul>
+        </p>
+        <img src="https://vetau.alltours.vn/wp-content/uploads/2018/11/tau-tn2.jpg">
+        <div class="note">Tàu TN2</div>
+        <p class="title">Bảng giờ tàu Ga Đà Nẵng</p>
+        <img src="https://vetau.alltours.vn/wp-content/uploads/2018/11/bang-gio-tau-ga-da-nang-di-ga-phia-bac.jpg">
+        <div class="note">Bảng giờ tàu Ga Đà Nẵng đi các ga phía Bắc</div>
+        <img src="https://vetau.alltours.vn/wp-content/uploads/2018/11/bang-gio-tau-ga-da-nang-di-ga-phia-nam.jpg">
+        <div class="note">Bảng giờ tàu Ga Đà Nẵng đi các ga phía Nam</div>
+        <p class="title">
+            Bản đồ ga Đà Nẵng
+        </p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.3648972790597!2d108.207092533859!3d16.07162335378588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219fb1e7f7191%3A0x86f207e3bce38fe5!2zR0EgxJDDgCBO4bq0Tkc!5e0!3m2!1svi!2s!4v1681975230044!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <p class="title">
+            Hình ảnh ga Đà Nẵng
+        </p>
+        <img src="https://vetau.alltours.vn/wp-content/uploads/2018/11/ga-da-nang.jpg">
+        <div class="note">Ga Đà Nẵng</div>
+        <img src="https://cdnimg.vietnamplus.vn/uploaded/natmjs/2020_09_07/ga_da_nang_0709.jpg">
+        <div class="note">Ga Đà Nẵng</div>
+        <p class="title">Thông tin liên hệ đặt vé tàu ga Đà Nẵng</p>
+        <p>Hành khách có thể đặt vé tàu hỏa từ ga Đà Nẵng đi hoặc từ các ga khác đến ga Đà Nẵng qua các phòng bán vé, điểm bán vé tàu trên toàn quốc, mua trực tuyến tại website Khangy hoặc mua qua điện thoại.</p>
+    </div>
+
+    <div class="footer" style="background:blue" id="lienlac">
+        <table>
+          <tr style="color:white;font-weight:bold;font-size:17px"><th style="margin-right:100px">CÁCH THỨC ĐẶT VÉ</th><th>KẾT NỐI VỚI CHÚNG TÔI</th><th>MUA VÉ TÀU TRỰC TUYẾN</th></tr>
+          <tr>
+            <td style="width:30%">
+              <i class="material-icons">computer</i>
+              <div style="color:white;font-size:16px;font-weight:bold">TRỰC TIẾP QUA WEBSITE :  <a style="color:yellow">Website Khangy</a></div>
+              <i class="material-icons">call</i>
+              <div style="color:white;font-size:16px;font-weight:bold">ĐẶT VÉ QUA SỐ HOTLINE :  <span style="color:yellow">0123456789</span></div>
+              <i class="material-icons">meeting_room</i>
+              <div style="color:white;font-size:16px;font-weight:bold">ĐẶT VÉ TẠI VĂN PHÒNG : </div>
+              <div style="color:white">Trụ sở chính: Phòng 1, Gò Đậu, Phú Nghĩa, Chương Mỹ,Hà Nội(đối diện Chùa Hạ)</div>
+            </td>
+            <td style="text-align:center;width:40%" >
+              <img src="https://levvvel.com/wp-content/uploads/best-small-minecraft-houses.jpg" alt="mine" style="width:35%; height:auto;border:5px solid green;border-radius: 8px;">
+            </td>
+            <td>
+              <p style="color:white;font-weight:bold">
+                Đặt Vé Tàu | Mua Vé Tàu | Mua Vé Tàu Online |<br/>Đặt Vé Tàu Online | Vé Tàu Hà Nội Vinh | <br/>Vé Tàu Hà Nội Quảng Bình | Vé Tàu Hà Nội Huế |<br/>Vé Tàu Hà Nội Đà Nẵng |<br/>Vé Tàu Sài Gòn Nha Trang
+                <br/><span style="color:red;font-size:20px">Đơn vị trực thuộc: Công ty VHKM</span>
+              </p>
+            </td>
+          </tr>
+        </table>
+    </div>
 </body>
 </html>
