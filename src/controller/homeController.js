@@ -88,20 +88,27 @@ let getMainPage =async (req,res) => {
 }
 let bookTicket = async (req,res) => {
     let{account_id,username,password,name,start,destination,startDate,khuahoi,phone,email,address,message} = req.body;
-    await pool.execute("insert into customer(account_id,name,phoneNumber,email,address) values(?,?,?,?,?)"
-    ,[account_id,name,phone,email,address]);
-    let cs_id = await pool.execute("select max(customer_id) as m from customer");
-    let customer_id = cs_id[0][0].m;
-    let type = 'Khứa hồi';
-    if(!khuahoi){
-        type = 'Một chiều';
-    }
+    let quantity = await pool.execute("select ticket_in_stock from inventory where station_start=? and destination=?",[start,destination]);
+    quantity = quantity[0][0].ticket_in_stock;
+    if(quantity > 0){
+        await pool.execute("insert into customer(account_id,name,phoneNumber,email,address) values(?,?,?,?,?)"
+        ,[account_id,name,phone,email,address]);
+        let cs_id = await pool.execute("select max(customer_id) as m from customer");
+        let customer_id = cs_id[0][0].m;
+        let type = 'Khứa hồi';
+        if(!khuahoi){
+            type = 'Một chiều';
+        }
 
-    await pool.execute("insert into ticket(customer_id,station_start,destination,cost,start_date,return_date,type,message) values(?,?,?,?,?,?,?,?)"
-    ,[customer_id,start,destination,200.0,startDate,khuahoi,type,message]);
-    let ticket_id = await pool.execute("select max(ticket_id) as m from ticket");
-    let tk_id = ticket_id[0][0].m;
-    res.render("report.ejs", {tk_id:tk_id,ac_id:account_id,username:username,password:password});
+        await pool.execute("insert into ticket(customer_id,station_start,destination,cost,start_date,return_date,type,message) values(?,?,?,?,?,?,?,?)"
+        ,[customer_id,start,destination,200.0,startDate,khuahoi,type,message]);
+        let ticket_id = await pool.execute("select max(ticket_id) as m from ticket");
+        let tk_id = ticket_id[0][0].m;
+        res.render("report.ejs", {tk_id:tk_id,ac_id:account_id,username:username,password:password});
+    }
+    else{
+        res.render("unSuccessfulBook.ejs",{start,destination,username:username,password:password})
+    }
 }
 
 let getCsDetail =async (req,res) => {
@@ -124,8 +131,4 @@ let getStationInfo = (req,res) => {
 }
 module.exports = {
     getLoginPage,getMainPage,bookTicket,getSignUpPage,reportSignUp,getCsDetail,getStationInfo
-}
-
-function alertWrongPass() {
-    alert("Mật khẩu không khớp");
 }

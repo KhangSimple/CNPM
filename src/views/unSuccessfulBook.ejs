@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book ticket successfully</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/report.css">
+</head>
+<body>
+    <div>
+        <p style="color:red;font-size: 35px;">ĐẶT VÉ KHÔNG THÀNH CÔNG</p>
+        <p style="font-size: 20px;">Hiện không còn vé tàu đi từ <%= start%> đến <%= destination%></p>
+        <form action="/open-mainPage" method="post">
+            <input type="hidden" value="<%=username%>" name="username">
+            <input type="hidden" value="<%=password%>" name="password">
+            <button type="submit" id="back">Quay lại</button>
+        </form>
+    </div>
+</body>
+</html>
